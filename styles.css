@@ -1,0 +1,195 @@
+:root {
+    --primary-color: #007bff; /* Brighter Blue for a Tech/Gaming Vibe */
+    --secondary-color: #0056b3; /* Darker blue for hover/accents */
+    --accent-color: #28a745; /* Green for success/CTA emphasis */
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --bg-light: #ffffff;
+    --bg-dark: #0f1626; /* Dark section background */
+    --shadow: 0 10px 30px rgba(0,0,0,0.15);
+    --border-radius: 12px;
+    --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother transition curve */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; line-height: 1.7; color: var(--text-dark); overflow-x: hidden; background-color: var(--bg-light); }
+
+/* --- HEADER / HERO SECTION --- */
+.parallax-header {
+    height: 90vh;
+    background: linear-gradient(135deg, var(--bg-dark) 0%, #1e3c72 100%);
+    display: flex; flex-direction: column; justify-content: space-between; position: relative;
+    color: var(--text-light);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Nav */
+.navbar { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 20px 5%; background: rgba(15, 22, 38, 0.8); backdrop-filter: blur(8px); }
+
+/* Logo and Brand Text Integration */
+.nav-brand { 
+    display: flex; /* Allows logo and text to sit side-by-side */
+    align-items: center;
+    gap: 10px; 
+    font-size: 1.6em; 
+    font-weight: 800; 
+    color: var(--text-light); 
+}
+.brand-logo {
+    height: 40px; /* Logo size */
+    width: auto;
+}
+.brand-text {
+    font-weight: 800; /* Maintains bold text styling */
+}
+.brand-tag { font-size: 0.5em; font-weight: 600; vertical-align: super; background: var(--primary-color); padding: 2px 6px; border-radius: 4px; margin-left: 5px; }
+
+.nav-menu { display: flex; list-style: none; gap: 40px; }
+.nav-menu a:not(.cta-nav-link) { color: var(--text-light); text-decoration: none; font-weight: 600; transition: var(--transition); padding: 5px 0; border-bottom: 2px solid transparent; }
+.nav-menu a:not(.cta-nav-link):hover { color: var(--primary-color); border-bottom-color: var(--primary-color); }
+
+/* Navigation CTA Button Fix */
+.cta-nav-link { 
+    background: var(--accent-color); 
+    padding: 10px 20px; /* INCREASED PADDING for better fit */
+    border-radius: 6px; 
+    color: var(--text-light) !important; 
+    border: none !important;
+    text-decoration: none; /* Remove default link underline */
+}
+.cta-nav-link:hover { background: #1e7e34; color: var(--text-light) !important; }
+
+/* Hamburger Icon FIX */
+.hamburger { 
+    display: none; /* Hidden by default for desktop */
+    font-size: 2em; /* Large size for visibility */
+    color: var(--text-light); /* Explicitly white against the dark background */
+    cursor: pointer;
+    z-index: 11; /* Ensure it stacks above the navbar */
+    padding: 5px;
+    line-height: 1; /* Fixes vertical alignment of the '☰' character */
+    background: transparent;
+    border: none;
+}
+
+/* Hero */
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 0 5%; flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+.hero-title { font-size: 4em; font-weight: 800; margin-bottom: 15px; line-height: 1.1; max-width: 900px; }
+.highlight-text { color: var(--primary-color); }
+.hero-subtitle { font-size: 1.4em; margin-bottom: 40px; opacity: 0.9; max-width: 700px; font-weight: 400; }
+
+/* Main CTA Button Fix */
+.cta-button { 
+    display: inline-block; 
+    padding: 18px 45px; /* INCREASED PADDING for better fit */
+    background: var(--accent-color); 
+    color: var(--text-light); 
+    text-decoration: none; 
+    border-radius: 50px; 
+    font-weight: 700; 
+    font-size: 1.1em; 
+    transition: var(--transition); 
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4); 
+}
+.cta-button:hover { background: #1e7e34; transform: translateY(-3px); box-shadow: 0 12px 30px rgba(40, 167, 69, 0.6); }
+
+/* --- GENERAL LAYOUT --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 100px 0; }
+.light-bg { background-color: #f0f7ff; }
+.section-tagline { text-align: center; color: var(--primary-color); font-weight: 600; text-transform: uppercase; font-size: 0.9em; margin-bottom: 10px; letter-spacing: 2px; }
+h2 { font-size: 3em; text-align: center; color: var(--text-dark); margin-bottom: 60px; font-weight: 800; }
+.lead { font-size: 1.2em; text-align: center; max-width: 800px; margin: 0 auto 40px; color: var(--text-dark); opacity: 0.8; }
+
+/* --- SERVICES SECTION --- */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+.service-card { background: var(--bg-light); padding: 40px; border-radius: var(--border-radius); box-shadow: var(--shadow); transition: var(--transition); border-top: 5px solid var(--primary-color); }
+.service-card:hover { transform: translateY(-8px); box-shadow: 0 15px 40px rgba(0, 123, 255, 0.2); }
+.service-icon { font-size: 2.5em; display: block; margin-bottom: 20px; }
+.service-card h3 { color: var(--primary-color); margin-bottom: 15px; font-size: 1.6em; font-weight: 700; }
+.service-card p { font-size: 1em; opacity: 0.9; }
+
+/* --- WHY US SECTION --- */
+.why-us-section { background-color: #f0f7ff; }
+.advantage-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; text-align: center; }
+.advantage-item { padding: 30px; }
+.advantage-number { font-size: 3em; font-weight: 800; color: var(--secondary-color); margin-bottom: 10px; line-height: 1; }
+.advantage-item h3 { font-size: 1.4em; font-weight: 700; margin-bottom: 15px; }
+.advantage-item p { opacity: 0.85; }
+
+/* --- PORTFOLIO SECTION (Placeholder) --- */
+.placeholder-card { text-align: center; background: #e9f0f8; padding: 60px; border-radius: var(--border-radius); cursor: pointer; transition: var(--transition); border: 2px dashed var(--primary-color); max-width: 800px; margin: 0 auto; }
+.placeholder-card:hover { background: #dae3ee; border-style: solid; }
+.placeholder-card h3 { color: var(--primary-color); margin-bottom: 10px; }
+
+/* --- CONTACT SECTION --- */
+.contact-section { background: var(--bg-light); }
+.email-highlight { text-align: center; font-size: 1.4em; font-weight: 700; color: var(--accent-color); margin-bottom: 40px; }
+.contact-form { max-width: 600px; margin: 0 auto; display: grid; gap: 15px; background: #fff; padding: 30px; border-radius: var(--border-radius); box-shadow: var(--shadow); }
+.contact-form input, .contact-form textarea, .contact-form select { padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1em; transition: var(--transition); font-family: 'Montserrat', sans-serif; }
+.contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); outline: none; }
+.contact-form button { padding: 18px; background: var(--primary-color); color: #fff; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; font-weight: 700; transition: var(--transition); }
+.contact-form button:hover { background: var(--secondary-color); transform: translateY(-2px); }
+.form-status-message { text-align: center; margin-top: 15px; font-weight: 600; }
+
+/* --- FOOTER --- */
+footer { background: var(--bg-dark); color: var(--text-light); text-align: center; padding: 40px 0; border-top: 5px solid var(--primary-color); }
+.footer-links { margin-bottom: 15px; }
+footer a { color: var(--primary-color); text-decoration: none; font-weight: 600; margin: 0 15px; transition: var(--transition); }
+footer a:hover { color: var(--text-light); }
+
+/* --- MODALS --- */
+.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background: rgba(0,0,0,0.7); }
+.modal-content { background: var(--bg-light); margin: 10% auto; padding: 40px; border-radius: var(--border-radius); width: 90%; max-width: 550px; position: relative; animation: slideUp 0.5s; }
+.close { position: absolute; right: 20px; top: 10px; font-size: 2.5em; font-weight: 300; cursor: pointer; color: var(--text-dark); opacity: 0.6; }
+.close:hover { opacity: 1; }
+@keyframes slideUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+/* --- ANIMATION / UTILITIES --- */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* --- MEDIA QUERIES (Mobile View) --- */
+@media (max-width: 992px) {
+    .hero-title { font-size: 3em; }
+    .hero-subtitle { font-size: 1.2em; }
+    .advantage-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    /* Hamburger Icon FIX - Force visibility on mobile */
+    .hamburger { 
+        display: block; 
+    }
+    
+    .navbar { padding: 15px 5%; }
+    .nav-menu { 
+        position: fixed; 
+        left: -100%; 
+        top: 70px; 
+        flex-direction: column; 
+        background: var(--bg-dark); 
+        width: 100%; 
+        text-align: center; 
+        transition: left 0.3s ease; 
+        padding: 30px 0; 
+        border-top: 1px solid rgba(255,255,255,0.1); 
+    }
+    .nav-menu.active { left: 0; }
+    .nav-menu li { margin: 10px 0; }
+    .nav-menu a { padding: 10px 0; display: block; }
+    .section { padding: 60px 0; }
+    h2 { font-size: 2.2em; margin-bottom: 40px; }
+    .hero-title { font-size: 2.5em; }
+
+    /* Logo visibility adjustment for small screens */
+    @media (max-width: 500px) {
+        .nav-brand {
+            gap: 5px; /* Reduce gap */
+        }
+        .brand-text {
+            /* Hides "JB Solutions" text on very small screens, keeping only the logo and "GameDev" tag */
+            display: none; 
+        }
+    }
+}
